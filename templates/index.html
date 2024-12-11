@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<div class="app-title">
+    Car Price Prediction AI
+</div>
+<body>
+
+    <div class="chat-container" id="chatContainer">
+        <!-- Messages will appear here -->
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        const chatContainer = document.getElementById('chatContainer');
+        const userInput = document.getElementById('userInput');
+
+        function sendMessage() {
+            const messageText = userInput.value.trim();
+            if (messageText === '') return;
+
+            // Add user message to the chat
+            addMessage(messageText, 'user');
+
+            // Send user message to server and get bot response
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: messageText }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.response) {
+                    addMessage(data.response, 'bot');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                addMessage('Error connecting to server.', 'bot');
+            });
+
+            userInput.value = '';
+        }
+
+        function addMessage(text, sender) {
+            const message = document.createElement('div');
+            message.classList.add('message', sender);
+
+            if (sender === 'bot') {
+                const avatar = document.createElement('div');
+                avatar.classList.add('avatar');
+
+                const img = document.createElement('img');
+                img.src = 'https://as1.ftcdn.net/v2/jpg/05/59/53/58/1000_F_559535889_0lg80RbhtYUmpmy7eAi9ZWAzmpUYuiDj.jpg'; // Replace with your image URL
+                avatar.appendChild(img);
+
+                message.appendChild(avatar);
+            }
+
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble', sender);
+            bubble.textContent = text;
+
+            message.appendChild(bubble);
+            chatContainer.appendChild(message);
+
+            // Scroll to the bottom
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
