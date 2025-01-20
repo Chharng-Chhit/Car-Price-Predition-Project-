@@ -1,0 +1,518 @@
+Column Names
+Year
+Year Used
+Car Age
+Car Makes_Acura
+Car Makes_Alfa Romeo
+Car Makes_Aston Martin
+Car Makes_Audi
+Car Makes_BAIC
+Car Makes_BESTUNE
+Car Makes_BMW
+Car Makes_BYD
+Car Makes_Bentley
+Car Makes_CHANGAN
+Car Makes_Cadillac
+Car Makes_Changhe
+Car Makes_Chevrolet
+Car Makes_Chrysler
+Car Makes_Dodge
+Car Makes_FORTHING
+Car Makes_Ford
+Car Makes_Foton
+Car Makes_GAC
+Car Makes_Great Wall
+Car Makes_HONGQI
+Car Makes_HUMMER
+Car Makes_Haval
+Car Makes_Hawtai Motor
+Car Makes_Honda
+Car Makes_Hyundai
+Car Makes_Infiniti
+Car Makes_Isuzu
+Car Makes_JAC
+Car Makes_JETOUR
+Car Makes_Jaguar
+Car Makes_Jeep
+Car Makes_Kia
+Car Makes_Land Rover
+Car Makes_Lexus
+Car Makes_MAXUS
+Car Makes_MG
+Car Makes_Maserati
+Car Makes_Mazda
+Car Makes_McLaren
+Car Makes_Mercedes-Benz
+Car Makes_Mini
+Car Makes_Mitsubishi
+Car Makes_Nissan
+Car Makes_Peugeot
+Car Makes_Porsche
+Car Makes_Ram
+Car Makes_Renault
+Car Makes_Rolls-Royce
+Car Makes_SOUEAST
+Car Makes_SsangYong
+Car Makes_Subaru
+Car Makes_Suzuki
+Car Makes_Tesla
+Car Makes_Toyota
+Car Makes_Volkswagen
+Car Makes_Volvo
+Car Makes_WULING
+Car Makes_ZOTYE
+Car Makes_ZX AUTO
+Car Model_1500
+Car Model_2000
+Car Model_2008
+Car Model_3 Series
+Car Model_300
+Car Model_3008
+Car Model_300C
+Car Model_300CE
+Car Model_300E
+Car Model_325i
+Car Model_350Z
+Car Model_408
+Car Model_4Runner
+Car Model_5 Series
+Car Model_5008
+Car Model_520i
+Car Model_525i
+Car Model_530i
+Car Model_6
+Car Model_640i
+Car Model_650S
+Car Model_650S Spider
+Car Model_7 Series
+Car Model_730Li
+Car Model_735i
+Car Model_740LI
+Car Model_745
+Car Model_911 Carrera
+Car Model_A-Class
+Car Model_A25
+Car Model_A4
+Car Model_A6
+Car Model_A7
+Car Model_A8
+Car Model_A8L
+Car Model_AMG 63 s edition
+Car Model_AMG GT4
+Car Model_ASTA
+Car Model_Accent
+Car Model_Accord
+Car Model_Actyon
+Car Model_Aerostar
+Car Model_Alphard
+Car Model_Altima
+Car Model_Amarok
+Car Model_Ariya
+Car Model_Armada
+Car Model_Atlas
+Car Model_Aura
+Car Model_Avalon
+Car Model_Avenza
+Car Model_Aygo
+Car Model_B-Class
+Car Model_B90
+Car Model_BJ40
+Car Model_BRZ
+Car Model_BT50
+Car Model_BT50 Pro
+Car Model_Beetle
+Car Model_Belta
+Car Model_Benteyga
+Car Model_Boxster
+Car Model_Bronco
+Car Model_C-Class
+Car Model_C-HR
+Car Model_C250
+Car Model_C300
+Car Model_CLA
+Car Model_CLA AMG 45
+Car Model_CLA-45
+Car Model_CLA-Class
+Car Model_CLS-Class
+Car Model_CR-V
+Car Model_CS2
+Car Model_CS35 PLUS
+Car Model_CS55 PLUS
+Car Model_CS75 PLUS
+Car Model_CT
+Car Model_CTS
+Car Model_CX-5
+Car Model_CX-9
+Car Model_Cadenza
+Car Model_Camaro
+Car Model_Camry
+Car Model_Canter
+Car Model_Captiva
+Car Model_Caravelle
+Car Model_Carnival
+Car Model_Carrera GT
+Car Model_Cayenne
+Car Model_Cayman
+Car Model_Celerio
+Car Model_Celica
+Car Model_Challenger
+Car Model_Charger
+Car Model_City
+Car Model_Civic
+Car Model_Coaster
+Car Model_Colorado
+Car Model_Colt
+Car Model_Continental GT
+Car Model_Cooper
+Car Model_Cooper Countryman
+Car Model_Corolla
+Car Model_Corolla Altis
+Car Model_Corolla CROSS
+Car Model_Corona Avante
+Car Model_Corvette
+Car Model_County
+Car Model_Crown
+Car Model_Cruze
+Car Model_Cube
+Car Model_Cx-3
+Car Model_Cx-30
+Car Model_Cx-8
+Car Model_CyberTruck
+Car Model_D-MAX
+Car Model_D50
+Car Model_DX5
+Car Model_DX7
+Car Model_Datsun/Nissan Z-car
+Car Model_Defender
+Car Model_Defender 110
+Car Model_Discovery
+Car Model_Discovery 4
+Car Model_Discovery Sport
+Car Model_Discovery iii
+Car Model_E 280
+Car Model_E-350 Super Duty
+Car Model_E-Class
+Car Model_E-HS9
+Car Model_E-Series
+Car Model_E150
+Car Model_E2
+Car Model_ES
+Car Model_EXP
+Car Model_Eclipse
+Car Model_Ecosport
+Car Model_Elantra
+Car Model_Elgrand
+Car Model_Equinox
+Car Model_Escalade
+Car Model_Escalade ESV
+Car Model_Escalade EXT
+Car Model_Escape
+Car Model_Everest
+Car Model_Expedition
+Car Model_Explorer
+Car Model_Explorer Timberline
+Car Model_Express
+Car Model_F-150 Raptor
+Car Model_F-250 Super Duty
+Car Model_F-Series
+Car Model_F-Type
+Car Model_F150
+Car Model_F250
+Car Model_F350
+Car Model_FX
+Car Model_Fiesta
+Car Model_Figo
+Car Model_Flying Spur
+Car Model_Fortuner
+Car Model_Freelander
+Car Model_Frontier
+Car Model_Fusion
+Car Model_G-Class
+Car Model_G50
+Car Model_GL-Class
+Car Model_GL350
+Car Model_GLA-Class
+Car Model_GLB-Class
+Car Model_GLC-Class
+Car Model_GLE 53 AMG
+Car Model_GLE-Class
+Car Model_GLS-Class
+Car Model_GN8
+Car Model_GR Supra
+Car Model_GS
+Car Model_GS3
+Car Model_GS5
+Car Model_GS8
+Car Model_GT
+Car Model_GT Line
+Car Model_GT-R
+Car Model_GT500
+Car Model_GX
+Car Model_Galant
+Car Model_Ghost
+Car Model_Giulia
+Car Model_Gladiator
+Car Model_Grand Carnival
+Car Model_Grand i10
+Car Model_Granvia
+Car Model_H1
+Car Model_H2
+Car Model_H2 SUT
+Car Model_H3
+Car Model_H350
+Car Model_H3T
+Car Model_H5
+Car Model_H6
+Car Model_HR-V
+Car Model_HS
+Car Model_HS5
+Car Model_Hiace
+Car Model_Highlander
+Car Model_Hilux
+Car Model_Hilux REVO
+Car Model_Hilux Surf
+Car Model_Hilux Vigo
+Car Model_Hombre Space
+Car Model_I3
+Car Model_I3 Series
+Car Model_IONIQ
+Car Model_IS
+Car Model_Innova
+Car Model_Istana - ធូរីស
+Car Model_JOLION
+Car Model_JUKE
+Car Model_Jetta
+Car Model_Jetta GLI
+Car Model_K5
+Car Model_Koleos
+Car Model_Kona
+Car Model_Korando
+Car Model_LM
+Car Model_LS
+Car Model_LTD
+Car Model_LX450
+Car Model_LX450d
+Car Model_LX470
+Car Model_LX570
+Car Model_Lancer
+Car Model_Land Cruiser
+Car Model_Land Cruiser PRADO
+Car Model_Legacy
+Car Model_Levante
+Car Model_M3
+Car Model_M6
+Car Model_M60
+Car Model_MDX
+Car Model_MINI
+Car Model_ML350
+Car Model_MU-X
+Car Model_Macan
+Car Model_Macan S
+Car Model_Malibu
+Car Model_March
+Car Model_Matiz
+Car Model_Matrix
+Car Model_Maybach
+Car Model_Mazda2
+Car Model_Mazda3
+Car Model_Mazda6
+Car Model_Mazdaspeed 3
+Car Model_Micra
+Car Model_Mini Cooper S
+Car Model_Mirage
+Car Model_Model 3
+Car Model_Model Y
+Car Model_Montero
+Car Model_Montero Sport
+Car Model_Morning
+Car Model_Mulliner
+Car Model_Mulsanne
+Car Model_Multivan
+Car Model_Mustang
+Car Model_Mustang MACH-E
+Car Model_N-Trail
+Car Model_NV350
+Car Model_NX
+Car Model_Navara
+Car Model_Niro
+Car Model_Odyssey
+Car Model_Outlander
+Car Model_Pajero
+Car Model_Pajero IO
+Car Model_Pajero Sport
+Car Model_Palisade
+Car Model_Panamera
+Car Model_Paseo
+Car Model_Patrol
+Car Model_Phantom
+Car Model_Phantom Coupe
+Car Model_Picanto
+Car Model_Poer-1
+Car Model_Prado
+Car Model_Previa
+Car Model_Prius
+Car Model_Q5
+Car Model_Q7
+Car Model_Q8
+Car Model_QX56
+Car Model_QX60
+Car Model_QX80
+Car Model_R8
+Car Model_RAV4
+Car Model_RC
+Car Model_RS5
+Car Model_RX-8
+Car Model_RX200T
+Car Model_RX300
+Car Model_RX330
+Car Model_RX350
+Car Model_RX350L
+Car Model_RX400h
+Car Model_RX450HL
+Car Model_RX450h
+Car Model_RX5
+Car Model_RX8
+Car Model_Raider
+Car Model_Raize
+Car Model_Range Rover
+Car Model_Range Rover Evoque
+Car Model_Range Rover Sport
+Car Model_Range Rover Vogue
+Car Model_Ranger
+Car Model_Ranger Raptor
+Car Model_Ranger Wildtrak
+Car Model_Rangerover Velar
+Car Model_Rapide
+Car Model_Ray
+Car Model_Regius
+Car Model_Rexton
+Car Model_Ridgeline
+Car Model_Rio
+Car Model_Rubicon
+Car Model_Rush
+Car Model_S Line
+Car Model_S-Class
+Car Model_S-Type
+Car Model_S350
+Car Model_S400
+Car Model_S400L
+Car Model_S430
+Car Model_S500
+Car Model_SJ
+Car Model_SLK-Class
+Car Model_SLK55 AMG
+Car Model_Santa Cruz
+Car Model_Santa Fe
+Car Model_Scion
+Car Model_Selto
+Car Model_Sidekick
+Car Model_Sienna
+Car Model_Solara
+Car Model_Sonata
+Car Model_Sonet
+Car Model_Sonic
+Car Model_Sorento
+Car Model_Spark
+Car Model_Sportage
+Car Model_Starex
+Car Model_Starex H1
+Car Model_Staria
+Car Model_T5 EVO
+Car Model_T55
+Car Model_T77
+Car Model_T8
+Car Model_T800
+Car Model_T99
+Car Model_TERRALORD
+Car Model_Tacoma
+Car Model_Taurus
+Car Model_Terra
+Car Model_Territory
+Car Model_Tivoli
+Car Model_Touareg
+Car Model_Tourism - ទូរីស
+Car Model_Tracker
+Car Model_Trailblazer
+Car Model_Transit
+Car Model_Trax
+Car Model_Tredia
+Car Model_Triton
+Car Model_Trooper
+Car Model_Truck
+Car Model_Tucson
+Car Model_Tundra
+Car Model_UNI-K
+Car Model_UNI-T
+Car Model_UX
+Car Model_V-Class
+Car Model_VICTORY
+Car Model_Vanagon
+Car Model_Vellfire
+Car Model_Veloster
+Car Model_Venue
+Car Model_Vios
+Car Model_Visto
+Car Model_Vitara
+Car Model_Vito
+Car Model_Vitz
+Car Model_W201
+Car Model_Wrangler
+Car Model_X-Type
+Car Model_X1
+Car Model_X3
+Car Model_X4
+Car Model_X5
+Car Model_X5 M
+Car Model_X6
+Car Model_X7
+Car Model_X70
+Car Model_X95
+Car Model_XC40
+Car Model_XC60
+Car Model_XC90
+Car Model_XF
+Car Model_XJ
+Car Model_XJ Series
+Car Model_XT
+Car Model_Xpander
+Car Model_Yaris
+Car Model_Z3
+Car Model_Z4
+Car Model_Z4 M Roadster
+Car Model_ZS
+Car Model_i-280
+Car Model_i-350
+Car Model_i30
+Car Model_i8
+Tax Type_Plate Number
+Tax Type_Tax Paper
+Condition_New
+Condition_Used
+Body Type_Convertible
+Body Type_Hatchback
+Body Type_MPV (Minivan)
+Body Type_Pickup
+Body Type_SUV
+Body Type_Sedan
+Body Type_Sports
+Body Type_Station Wagon
+Fuel_Diesel
+Fuel_Electric
+Fuel_Hybrid
+Fuel_LPG
+Fuel_Petrol
+Transmission_Auto
+Transmission_Manual
+Color_Beige
+Color_Black
+Color_Blue
+Color_Brown
+Color_Gold
+Color_Gray
+Color_Green
+Color_Orange
+Color_Purple
+Color_Red
+Color_Silver
+Color_White
+Color_Yellow
