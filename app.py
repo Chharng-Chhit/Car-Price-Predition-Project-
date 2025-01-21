@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 import numpy as np
 from waitress import serve
+from flask_cors import CORS
 
 # Load the trained model and scaler from the files
 model = joblib.load('nural_network2.pkl')  # Load the model from 'nural_network2.pkl'
@@ -11,6 +12,7 @@ model = joblib.load('nural_network2.pkl')  # Load the model from 'nural_network2
 
 # Initialize Flask app
 app = flask.Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
@@ -30,9 +32,11 @@ def predict():
     try:
         # Get data from POST request
         data = request.get_json()
+        print(data)
 
         # Convert data into a DataFrame
         real_df = pd.DataFrame([data])
+        # print(float(real_df['Year']))
 
         # Ensure 'Year' is an integer
         real_df['Year'] = float(real_df['Year'])
