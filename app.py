@@ -46,7 +46,6 @@ def predict():
     try:
         # Get data from POST request
         data = request.get_json()
-        print(data)
 
         # Convert data into a DataFrame
         real_df = pd.DataFrame([data])
