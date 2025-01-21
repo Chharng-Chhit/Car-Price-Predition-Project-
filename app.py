@@ -3,7 +3,8 @@ from flask import request, jsonify
 import joblib
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler
+from waitress import serve
+from flask_cors import CORS
 
 # Load the trained model and scaler from the files
 models = {
@@ -22,6 +23,7 @@ scaler = joblib.load('./model/scaler.pkl')
 
 # Initialize Flask app
 app = flask.Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
@@ -47,7 +49,15 @@ def predict():
 
         # Convert data into a DataFrame
         real_df = pd.DataFrame([data])
-        
+        # print(float(real_df['Year']))
+
+        # Ensure 'Year' is an integer
+        real_df['Year'] = float(real_df['Year'])
+
+        # Feature engineering: Add 'Car Age' feature
+        real_df['Car Age'] = float(2025 - real_df['Year'])  # Assuming 'Year' is provided
+        real_df['Year'] = float(real_df['Year'])  # Convert 'Year' to float properly
+
         # One-hot encode categorical columns
         real_df = pd.get_dummies(real_df, columns=['Car Makes', 'Tax Type', 'Condition', 'Body Type', 'Fuel', 'Transmission', 'Color', 'Car Model'])
 
