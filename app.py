@@ -4,11 +4,9 @@ import joblib
 import pandas as pd
 import numpy as np
 from waitress import serve
-from sklearn.preprocessing import StandardScaler
+from flask_cors import CORS
 
 # Load the trained model and scaler from the files
-# model = joblib.load('nural_network2.pkl')  # Load the model from 'nural_network2.pkl'
-# scaler = joblib.load('scaler.pkl')  # Load the scaler from 'scaler.pkl'
 models = {
     'Neural Network'    : joblib.load('./model/Neural-Network-Model.pkl'),
     'Random Forrest'    : joblib.load('./model/RFR-Model.pkl'),
@@ -21,8 +19,11 @@ models = {
     'Lasso'             : joblib.load('./model/Lasso-Model.pkl')
 }
 
+scaler = joblib.load('./model/scaler.pkl')
+
 # Initialize Flask app
 app = flask.Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
@@ -30,21 +31,26 @@ def home():
 
 # Inverse Box-Cox transformation for 'Price'
 def inverse_boxcox(transformed_data, lambda_param):
-    if lambda_param == 0:
-        return np.exp(transformed_data)
-    else:
-        return (lambda_param * transformed_data + 1) ** (1 / lambda_param)
+    try:
+        if lambda_param == 0:
+            return np.exp(transformed_data)
+        else:
+            return (lambda_param * transformed_data + 1) ** (1 / lambda_param)
+    except Exception as e:
+        print(f"Error in Box-Cox transformation: {e}")
+        return np.nan  # Return NaN if transformation fails
 
 # Endpoint to predict car price
 @app.route('/predict', methods=['POST'])
 def predict():
-    
     try:
         # Get data from POST request
         data = request.get_json()
+        print(data)
 
         # Convert data into a DataFrame
         real_df = pd.DataFrame([data])
+        # print(float(real_df['Year']))
 
         # Ensure 'Year' is an integer
         real_df['Year'] = float(real_df['Year'])
@@ -56,46 +62,53 @@ def predict():
         # One-hot encode categorical columns
         real_df = pd.get_dummies(real_df, columns=['Car Makes', 'Tax Type', 'Condition', 'Body Type', 'Fuel', 'Transmission', 'Color', 'Car Model'])
 
-        
-        df = pd.read_csv('./data/columns_list.csv')
-        columns_list = df['Column Names'].tolist()
+        # Feature engineering (Add 'Car Age' feature)
+        real_df['Car Age'] = 2025 - real_df['Year'].astype(float)
+        real_df['Year'] = real_df['Year'].astype(float)
 
+        
+
+        # Load columns from a CSV to ensure the model columns are aligned
+        df = pd.read_csv('./data/columns_list.csv')
+        train_columns = df['Column Names'].tolist()
 
         # Ensure all columns that the model expects are present
-        real_df = real_df.reindex(columns=columns_list, fill_value=0)
+        real_df = real_df.reindex(columns=train_columns, fill_value=0)
+
         real_df = real_df.drop(columns=['Price'], errors='ignore')
-        real_df_scaled = StandardScaler().transform(real_df)
 
-        # # Assuming you have the lambda used for the Box-Cox transformation during training
-        price_lambda = -0.02832931484315432
-
+        real_df_scaled = scaler.transform(real_df)
         # Initialize a DataFrame to store results
-        results = pd.DataFrame()
+        results = {}
 
         # Print the shape to check if it's still empty
         print("Shape of real_df after reindexing:", real_df.shape)
 
         # Proceed if there are rows in real_df
         if real_df.shape[0] > 0:
-            # # Scale the transformed data using the scaler
-            # predicted_price = model.predict(real_df_scaled)
-            
-            # print(predicted_price)
-
-            # # Convert the predicted price back to the original scale
-            # predicted_price_original = inverse_boxcox(predicted_price.flatten(), price_lambda)
-
             # Predict prices for each model
             for model_name, model in models.items():
-                predicted_price = model.predict(real_df_scaled)
-                predicted_price_original = inverse_boxcox(predicted_price.flatten(), price_lambda)
-                results[model_name] = [f"${predicted:,.2f}" for predicted in predicted_price_original]
+                if model_name != 'Neural Network':
+                    predicted_price = model.predict(real_df_scaled)
+                    predicted_price_original = inverse_boxcox(predicted_price.flatten(), -0.02832931484315432)
+                    if not np.isnan(predicted_price_original[0]):  # Check if predicted value is not NaN
+                        results[model_name] = [f"${predicted:,.2f}" for predicted in predicted_price_original]
+                    else:
+                        results[model_name] = ["Prediction failed"]
+                else: 
+                    predicted_price = model.predict(real_df)
+                    predicted_price_original = inverse_boxcox(predicted_price.flatten(), -0.02832931484315432)
+                    if not np.isnan(predicted_price_original[0]):  # Check if predicted value is not NaN
+                        results[model_name] = [f"${predicted:,.2f}" for predicted in predicted_price_original]
+                    else:
+                        results[model_name] = ["Prediction failed"]
 
             # Display the results
             print(results)
 
-            # Output the predicted price
-            return jsonify({'predicted_price'})
+            # Return the predicted price
+            return jsonify({'predicted_prices': results})
+
         else:
             return jsonify({'error': 'The DataFrame is empty, please check your data.'})
 
@@ -103,5 +116,5 @@ def predict():
         return jsonify({'error': str(e)})
 
 # Run the app
-if __name__ == '__main__':# Load columns from a CSV to ensure the model columns are aligned
+if __name__ == '__main__':
     app.run(debug=True, threaded=True)
