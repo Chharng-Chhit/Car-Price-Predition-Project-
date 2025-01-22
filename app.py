@@ -6,18 +6,7 @@ import numpy as np
 from waitress import serve
 from flask_cors import CORS
 
-# Load the trained model and scaler from the files
-models = {
-    'Neural Network'    : joblib.load('./model/Neural-Network-Model.pkl'),
-    'Random Forrest'    : joblib.load('./model/RFR-Model.pkl'),
-    'Decision Tree'     : joblib.load('./model/DT-Model.pkl'),
-    'Gradient Boosting' : joblib.load('./model/GB-Model.pkl'),
-    'LightGBM'          : joblib.load('./model/LGB-Model.pkl'),
-    'XGBoost'           : joblib.load('./model/XGB-Model.pkl'),
-    'Elastic Net'       : joblib.load('./model/ENR-Model.pkl'),
-    'Ridge'             : joblib.load('./model/Ridge-Model.pkl'),
-    'Lasso'             : joblib.load('./model/Lasso-Model.pkl')
-}
+
 
 scaler = joblib.load('./model/scaler.pkl')
 
@@ -43,6 +32,19 @@ def inverse_boxcox(transformed_data, lambda_param):
 # Endpoint to predict car price
 @app.route('/predict', methods=['POST'])
 def predict():
+    
+    # Load the trained model and scaler from the files
+    models = {
+        'Neural Network'    : joblib.load('./model/Neural-Network-Model.pkl'),
+        'Random Forrest'    : joblib.load('./model/RFR-Model.pkl'),
+        'Decision Tree'     : joblib.load('./model/DT-Model.pkl'),
+        'Gradient Boosting' : joblib.load('./model/GB-Model.pkl'),
+        'LightGBM'          : joblib.load('./model/LGB-Model.pkl'),
+        'XGBoost'           : joblib.load('./model/XGB-Model.pkl'),
+        'Elastic Net'       : joblib.load('./model/ENR-Model.pkl'),
+        'Ridge'             : joblib.load('./model/Ridge-Model.pkl'),
+        'Lasso'             : joblib.load('./model/Lasso-Model.pkl')
+    }
     try:
         # Get data from POST request
         data = request.get_json()
